@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron: "0 21 * * 3"
+    - cron: "0 22 * * 1"
 
 jobs:
   deploy:
@@ -50,7 +50,7 @@ jobs:
         ---
         applications:
         - name: v2ws
-          memory: 128M
+          memory: 256M
           disk_quota: 128M
           random-route: true
           command: ./v2ray
