@@ -19,19 +19,19 @@ jobs:
         rm -rf v2ray-linux-64.zip
         chmod 700 v2ray v2ctl
         cat > config.json << EOF
-        {
-	"inbounds": [
-		{
-			"port": 8080,
-			"protocol": "vmess",
-			"settings": {
-				"clients": [
-					{
-						"id": "${{ secrets.CF_UUID_IBM }}",
-						"alterId": 64
-					}
-				]
-			},
+       {
+          "inbounds": [
+            {
+              "port": 8080,
+              "protocol": "vmess",
+              "settings": {
+                "clients": [
+                  {
+                    "id": "${{ secrets.CF_UUID_IBM }}",
+                    "alterId": 64
+                  }
+                ]
+              },
 			"streamSettings": {
 				"network": "ws",
 				"wsSettings": {
@@ -46,15 +46,15 @@ jobs:
 					"tls"
 				]
 			}
-		}
-	],
-	"outbounds": [
-		{
-			"protocol": "freedom",
-			"settings": {}
-		}
-	]
-}
+            }
+          ],
+          "outbounds": [
+            {
+              "protocol": "freedom",
+              "settings": {}
+            }
+          ]
+        }
         EOF
         
         cat > manifest-ibm.yml << EOF
