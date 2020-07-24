@@ -19,7 +19,7 @@ jobs:
         rm -rf v2ray-linux-64.zip
         chmod 700 v2ray v2ctl
         cat > config.json << EOF
-       {
+      {
           "inbounds": [
             {
               "port": 8080,
@@ -32,20 +32,9 @@ jobs:
                   }
                 ]
               },
-"streamSettings": {
-"network": "ws",
-"wsSettings": {
-"path": "/uYwYl4JRWJkyYTyrVUHK",
-"headers": {}
-}
-},
-"sniffing": {
-"enabled": true,
-"destOverride": [
-"http",
-"tls"
-]
-}
+              "streamSettings": {
+                "network":"ws"
+              }
             }
           ],
           "outbounds": [
