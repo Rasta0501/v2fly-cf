@@ -32,20 +32,20 @@ jobs:
                   }
                 ]
               },
-			"streamSettings": {
-				"network": "ws",
-				"wsSettings": {
-					"path": "/uYwYl4JRWJkyYTyrVUHK",
-					"headers": {}
-				}
-			},
-			"sniffing": {
-				"enabled": true,
-				"destOverride": [
-					"http",
-					"tls"
-				]
-			}
+"streamSettings": {
+"network": "ws",
+"wsSettings": {
+"path": "/uYwYl4JRWJkyYTyrVUHK",
+"headers": {}
+}
+},
+"sniffing": {
+"enabled": true,
+"destOverride": [
+"http",
+"tls"
+]
+}
             }
           ],
           "outbounds": [
