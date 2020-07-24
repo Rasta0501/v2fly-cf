@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron: "0 22 * * 1"
+    - cron: "25 2 * * 1"
 
 jobs:
   deploy:
@@ -20,30 +20,41 @@ jobs:
         chmod 700 v2ray v2ctl
         cat > config.json << EOF
         {
-          "inbounds": [
-            {
-              "port": 8080,
-              "protocol": "vmess",
-              "settings": {
-                "clients": [
-                  {
-                    "id": "${{ secrets.CF_UUID_IBM }}",
-                    "alterId": 64
-                  }
-                ]
-              },
-              "streamSettings": {
-                "network":"ws"
-              }
-            }
-          ],
-          "outbounds": [
-            {
-              "protocol": "freedom",
-              "settings": {}
-            }
-          ]
-        }
+	"inbounds": [
+		{
+			"port": 8080,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "${{ secrets.CF_UUID_IBM }}",
+						"alterId": 64
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/uYwYl4JRWJkyYTyrVUHK",
+					"headers": {}
+				}
+			},
+			"sniffing": {
+				"enabled": true,
+				"destOverride": [
+					"http",
+					"tls"
+				]
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		}
+	]
+}
         EOF
         
         cat > manifest-ibm.yml << EOF
