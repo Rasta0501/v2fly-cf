@@ -29,7 +29,7 @@ jobs:
                 "clients": [
                   {
                     "id": "${{ secrets.CF_UUID_IBM }}",
-                    "alterId": 8
+                    "alterId": 0
                   }
                 ]
               },
