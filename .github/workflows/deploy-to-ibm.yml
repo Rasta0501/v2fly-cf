@@ -18,8 +18,7 @@ jobs:
         wget -q https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
         unzip -o v2ray-linux-64.zip "v2ray" "v2ctl" "geosite.dat" "geoip.dat" 
         rm -rf v2ray-linux-64.zip
-        mv v2ray zhensan
-        chmod 700 zhensan v2ctl
+        chmod 700 v2ray v2ctl
         cat > config.json << EOF
         {
           "inbounds": [
@@ -55,7 +54,7 @@ jobs:
           memory: 256M
           disk_quota: 128M
           random-route: true
-          command: ./zhensan
+          command: ./v2ray
           buildpacks:
           - binary_buildpack
         EOF
